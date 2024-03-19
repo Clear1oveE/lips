@@ -6,7 +6,6 @@
   import { PocketBase_URL } from "../utils/api/index";
   import { onMount } from "svelte";
   import { writable } from "svelte/store";
-  import Navbar from "../components/Navbar.svelte";
 
   const pb = new PocketBase(PocketBase_URL);
   let records = [];
@@ -53,8 +52,6 @@
   });
 </script>
 
-<Navbar />
-
 {#each records as record}
   <div class="record">
     <div class="tittle">{record.tittle}</div>
@@ -72,11 +69,13 @@
 
 <style>
   .record {
+    position: fixed;
+    top: 0%;
     width: auto;
-    height: 98%;
+    height: 90%;
     border: 1px solid #ccc;
     padding: 15px;
-    margin: 10px 0;
+    margin: 4%;
     background-color: #f9f9f9;
   }
 
